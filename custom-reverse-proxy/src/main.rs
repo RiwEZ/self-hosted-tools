@@ -6,16 +6,16 @@ use pingora::{
     Result,
 };
 
-pub struct Gateway;
+pub struct ReverseProxy;
 
-impl Gateway {
+impl ReverseProxy {
     pub fn new() -> Self {
-        Gateway {}
+        ReverseProxy {}
     }
 }
 
 #[async_trait]
-impl ProxyHttp for Gateway {
+impl ProxyHttp for ReverseProxy {
     type CTX = ();
 
     fn new_ctx(&self) -> Self::CTX {
@@ -35,7 +35,7 @@ fn main() {
     let mut server = Server::new(None).expect("[main] failed to start pingora server");
     server.bootstrap();
 
-    let mut service = http_proxy_service(&server.configuration, Gateway::new());
+    let mut service = http_proxy_service(&server.configuration, ReverseProxy::new());
 
     service
         .add_tls("0.0.0.0:4430", "./keys/one_cert.crt", "./keys/one_key.pem") // TODO change this to config
