@@ -7,5 +7,7 @@ services:
       - CLOUD_FLARE_API_KEY=
       - INTERVAL=60
       - PROXIED=true
+      - AUTH_EMAIL=test@gmail.com
+      - AUTH_KEY=
     image: ghcr.io/riwez/cloudflare-ddns
 
