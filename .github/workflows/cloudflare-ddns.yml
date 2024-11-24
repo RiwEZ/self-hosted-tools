@@ -14,6 +14,9 @@ env:
 jobs:
   push:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./cloudflare-ddns
     permissions:
       packages: write
       contents: read
