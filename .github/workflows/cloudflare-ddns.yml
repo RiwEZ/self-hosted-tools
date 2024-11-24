@@ -1,4 +1,4 @@
-name: ci
+name: cloudflare-ddns-push-image
 
 on:
   push:
