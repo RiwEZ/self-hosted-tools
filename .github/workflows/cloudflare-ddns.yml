@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'cloudflare-ddns/**'
+  workflow_dispatch:
 
 env:
   IMAGE_NAME: cloudflare-ddns
